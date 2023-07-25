@@ -3,59 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website with PayPal Payment</title>
+    <title>Center for Energy, Materials, and Telecommunications</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
             background-color: #f0f0f0;
         }
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .paypal-btn {
-            display: block;
-            margin: 20px auto;
+        h1 {
+            margin-top: 0;
         }
+        /* Add more CSS styles as needed */
     </style>
 </head>
 <body>
+    <header>
+        <h1>Center for Energy, Materials, and Telecommunications</h1>
+    </header>
     <div class="container">
-        <h1>Welcome to Our Simple Website!</h1>
-        <p>This is a demo website with a blue nice background and a PayPal payment integration.</p>
-
-        <!-- PayPal Button Code -->
-        <div class="paypal-btn">
-            <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
-            <script>
-                paypal.Buttons({
-                    createOrder: function(data, actions) {
-                        return actions.order.create({
-                            purchase_units: [{
-                                amount: {
-                                    value: '10.00' // Replace with your desired payment amount
-                                }
-                            }]
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        return actions.order.capture().then(function(details) {
-                            alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
-                            // Additional actions to take after successful payment, like redirecting to a success page.
-                        });
-                    },
-                    onError: function(err) {
-                        alert('Payment failed. Please try again later.');
-                        console.error('PayPal Error:', err);
-                    }
-                }).render('.paypal-btn');
-            </script>
-        </div>
+        <h2>About the Center</h2>
+        <p>
+            Your center's description goes here. Provide information about the center's mission, research areas, and achievements.
+        </p>
+        <!-- Add more content as needed -->
     </div>
 </body>
 </html>
