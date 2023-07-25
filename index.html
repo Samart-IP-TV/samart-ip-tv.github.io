@@ -1,52 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=1920"/>
-    <meta name="description"
-          content="Tizen Download API Demo" />
-
-    <title>Welcome to Smart IP-TV Activation </title>
-
-    <script type='text/javascript' src='$WEBAPIS/webapis/webapis.js'></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website with PayPal Payment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .paypal-btn {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>Welcome to Our Simple Website!</h1>
+        <p>This is a demo website with a blue nice background and a PayPal payment integration.</p>
 
-    <h1> IP-TV </h1>
-
-    <div class="left">
-        <h2>Contact us:</h2>
-
-        <div>
-            1 - Downloaded file lists<br>
-            2 - Start download - small file<br>
-            3 - Start download - large file<br>
-            Pause - Pause download<br>
-            Play - Resume download<br>
-            Stop - Cancel download<br>
-            0 - Clear logs
+        <!-- PayPal Button Code -->
+        <div class="paypal-btn">
+            <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
+            <script>
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: '10.00' // Replace with your desired payment amount
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
+                            // Additional actions to take after successful payment, like redirecting to a success page.
+                        });
+                    },
+                    onError: function(err) {
+                        alert('Payment failed. Please try again later.');
+                        console.error('PayPal Error:', err);
+                    }
+                }).render('.paypal-btn');
+            </script>
         </div>
-
-        <div id="progress" class="progress">
-            <div id="bar" class="bar"></div>
-        </div>
-
-        <fieldset>
-            <legend>Who are we?</legend>
-            <div id="fileList" class="logs"></div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Logs</legend>
-            <div id="logs" class="logs"></div>
-        </fieldset>
-   
-
     </div>
-
-    <script src="main.js"></script>
 </body>
 </html>
