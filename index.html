@@ -33,6 +33,21 @@
             display: block;
             margin: 20px auto;
         }
+        /* Two-column layout styles */
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .left-column {
+            flex-basis: 30%;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+        .right-column {
+            flex-basis: 65%;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -40,39 +55,50 @@
         <h1>Center for Energy, Materials, and Telecommunications</h1>
     </header>
     <div class="container">
-        <h2>About the Center</h2>
-        <p>
-            Your center's description goes here. Provide information about the center's mission, research areas, and achievements.
-        </p>
+        <div class="columns">
+            <!-- Left Column -->
+            <div class="left-column">
+                <h2>Navigation</h2>
+                <!-- Add navigation links or other content here -->
+            </div>
 
-        <!-- PayPal Button Code -->
-        <div class="paypal-btn">
-            <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
-            <script>
-                paypal.Buttons({
-                    createOrder: function(data, actions) {
-                        return actions.order.create({
-                            purchase_units: [{
-                                amount: {
-                                    value: '50.00' // Replace with your desired payment amount
-                                }
-                            }]
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        return actions.order.capture().then(function(details) {
-                            alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
-                            // Additional actions to take after successful payment, like redirecting to a success page.
-                        });
-                    },
-                    onError: function(err) {
-                        alert('Payment failed. Please try again later.');
-                        console.error('PayPal Error:', err);
-                    }
-                }).render('.paypal-btn');
-            </script>
+            <!-- Right Column -->
+            <div class="right-column">
+                <h2>About the Center</h2>
+                <p>
+                    Your center's description goes here. Provide information about the center's mission, research areas, and achievements.
+                </p>
+
+                <!-- PayPal Button Code -->
+                <div class="paypal-btn">
+                    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
+                    <script>
+                        paypal.Buttons({
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: '50.00' // Replace with your desired payment amount
+                                        }
+                                    }]
+                                });
+                            },
+                            onApprove: function(data, actions) {
+                                return actions.order.capture().then(function(details) {
+                                    alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
+                                    // Additional actions to take after successful payment, like redirecting to a success page.
+                                });
+                            },
+                            onError: function(err) {
+                                alert('Payment failed. Please try again later.');
+                                console.error('PayPal Error:', err);
+                            }
+                        }).render('.paypal-btn');
+                    </script>
+                </div>
+                <!-- End PayPal Button Code -->
+            </div>
         </div>
-        <!-- End PayPal Button Code -->
     </div>
 </body>
 </html>
