@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart IP-TV Activation</title>
+    <title> Smart </title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-           <body style="background: #f0f0f0 url('https://www.adelaide.edu.au/staff/') center/cover no-repeat;">
-
-            
+            /* Replace the URL below with the background image URL you want to use */
+            background: #f0f0f0 url('https://inrs.ca/les-etudes/reussite-et-vie-etudiante/accueil-et-integration/votre-lieu-detudes-centre-energie-materiaux-telecommunications/') center/cover no-repeat;
         }
         header {
             background-color: #003A5D;
@@ -50,7 +49,7 @@
 </head>
 <body>
     <header>
-        <h1>University of Adelaide</h1>
+        <h1>Samrt IP TV </h1>
     </header>
     <div class="container">
         <!-- First Row -->
@@ -87,3 +86,40 @@
 
         <!-- Third Row (Smart IP-TV : Payment) -->
         <div class="row">
+            <div class="column">
+                <h2>Smart IP-TV : Payment</h2>
+                <p>Text 7: Pay here  Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <!-- PayPal Button Code for Smart IP-TV Payment -->
+                <div class="paypal-btn">
+                    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
+                    <script>
+                        paypal.Buttons({
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: '19.99' // Replace with the amount for Smart IP-TV payment
+                                        }
+                                    }]
+                                });
+                            },
+                            onApprove: function(data, actions) {
+                                return actions.order.capture().then(function(details) {
+                                    alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
+                                    // Additional actions to take after successful payment, like redirecting to a success page.
+                                });
+                            },
+                            onError: function(err) {
+                                alert('Payment failed. Please try again later.');
+                                console.error('PayPal Error:', err);
+                            }
+                        }).render('.paypal-btn');
+                    </script>
+                </div>
+                <!-- End PayPal Button Code for Smart IP-TV Payment -->
+            </div>
+            <!-- Add more columns as needed for other sections -->
+        </div>
+    </div>
+</body>
+</html>
