@@ -1,113 +1,24 @@
-dsico<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP-TV Payment</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            /* Replace the URL below with the background image URL you want to use */
-            background: #f0f0f0 url('https://www.example.com/sample-background.jpg') center/cover no-repeat;
-        }
-        header {
-            background-color: #003A5D;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* Added an opaque white background for the content area */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            margin-top: 0;
-        }
-        /* Add more CSS styles as needed */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .column {
-            flex-basis: calc(33.33% - 20px);
-            padding: 10px;
-            background-color: #f9f9f9;
-        }
-        .paypal-btn {
-            display: block;
-            margin: 20px auto;
-        }
-        .small-text {
-            font-size: 12px;
-            color: #888;
-        }
-    </style>
+    <title>Four Band Columns</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>IP-TV Payment </h1>
-    </header>
-    <div class="container">
-        <!-- First Row -->
-        <div class="row">
-            <div class="column">
-                <h2>Diverse Range of Services</h2>
-                <p>Pick-up the Plan that Best Fits your Need </p>
-            </div>
-            <div class="column">
-                <h2>User Friendly Service</h2>
-                <p>Support through WhatsApp and Emails </p>
-            </div>
-            <div class="column">
-                <h2>Outstanding Quality Content</h2>
-                <p>16000+ Channels</p>
-            </div>
-        </div>
-
-        <!-- Third Row (Smart IP-TV : Payment) -->
-        <div class="row">
-            <div class="column" style="flex-basis: 100%; text-align: center;">
-                <h2 class="small-text">Smart IP-TV : Payment</h2>
-                <p class="small-text">Get Back Your Money if it is not Convinient For You​.</p>
-                <!-- PayPal Button Code for Smart IP-TV Payment -->
-                <div class="paypal-btn">
-                    <script src="https://www.paypal.com/sdk/js?client-id=AfEGvHttdsIUyNQVySo6bGDfNFBReu7wVc-09dXah8ugz7jLYrFDMNlD5vfzEo9E8v4HBG1Mi6dQcOVE"></script>
-                    <script>
-                        paypal.Buttons({
-                            createOrder: function(data, actions) {
-                                return actions.order.create({
-                                    purchase_units: [{
-                                        amount: {
-                                            value: '19.99' // Replace with the amount for Smart IP-TV payment
-                                        }
-                                    }]
-                                });
-                            },
-                            onApprove: function(data, actions) {
-                                return actions.order.capture().then(function(details) {
-                                    alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
-                                    // Additional actions to take after successful payment, like redirecting to a success page.
-                                });
-                            },
-                            onError: function(err) {
-                                alert('Payment failed. Please try again later.');
-                                console.error('PayPal Error:', err);
-                            }
-                        }).render('.paypal-btn');
-                    </script>
-                </div>
-                <!-- End PayPal Button Code for Smart IP-TV Payment -->
-            </div>
-            <!-- Add more columns as needed for other sections -->
-        </div>
+    <div class="band blue-band">
+        <p class="white-text">Text 1</p>
+    </div>
+    <a href="payment.html" class="band white-band">
+        <p class="blue-text">Text 2</p>
+    </a>
+    <div class="band wide-band white-band">
+        <p class="blue-text">Text 3</p>
+    </div>
+    <div class="band yellow-band">
+        <p class="white-text small-font">Text 4</p>
     </div>
 </body>
 </html>
+

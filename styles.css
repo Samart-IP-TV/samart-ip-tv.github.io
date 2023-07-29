@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.band {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.blue-text {
+    color: blue;
+}
+
+.small-font {
+    font-size: 16px;
+}
+
+.blue-band {
+    background-color: blue;
+    width: 25%;
+}
+
+.white-band {
+    background-color: #fff;
+    width: 25%;
+}
+
+.wide-band {
+    width: 50%;
+}
+
+.yellow-band {
+    background-color: yellow;
+    width: 25%;
+}
+
