@@ -26,7 +26,7 @@
     </div>
     <div class="band yellow-background smaller-background">
         <p class="black-text small-font">Text 4</p>
-        <div id="paypal-button-container"></div> <!-- PayPal button moved here -->
+        <div id="paypal-button-container" class="hidden-paypal"></div> <!-- PayPal button initially hidden -->
     </div>
 
     <!-- Hidden text for Text 1, Text 11, Text 12, Text 13, and Text 3 -->
@@ -41,6 +41,8 @@
     </div>
     <div id="text13Content" class="hidden">
         <p class="white-text big-font">This is the additional content for Text 13.</p>
+        <p class="white-text big-font">Click below to proceed with PayPal payment:</p>
+        <div id="paypal-buttons"></div> <!-- PayPal buttons will be rendered here -->
     </div>
     <div id="text3Content" class="hidden">
         <p class="white-text big-font">This is the additional content for Text 3.</p>
@@ -50,29 +52,39 @@
         function toggleText(contentId) {
             var content = document.getElementById(contentId);
             content.classList.toggle("hidden");
+
+            if (contentId === "text13Content") {
+                var paypalContainer = document.getElementById("paypal-button-container");
+                paypalContainer.classList.toggle("hidden-paypal");
+                // Render PayPal buttons when Text 13 is clicked
+                if (!paypalContainer.querySelector("#paypal-buttons iframe")) {
+                    paypal.Buttons({
+                        createOrder: function(data, actions) {
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: '19.99' // Replace with the amount for your product or service
+                                    }
+                                }]
+                            });
+                        },
+                        onApprove: function(data, actions) {
+                            return actions.order.capture().then(function(details) {
+                                alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
+                                // Additional actions to take after successful payment, like redirecting to a success page.
+                            });
+                        },
+                        onError: function(err) {
+                            alert('Payment failed. Please try again later.');
+                            console.error('PayPal Error:', err);
+                        }
+                    }).render('#paypal-buttons');
+                }
+            }
         }
 
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '19.99' // Replace with the amount for your product or service
-                        }
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
-                    // Additional actions to take after successful payment, like redirecting to a success page.
-                });
-            },
-            onError: function(err) {
-                alert('Payment failed. Please try again later.');
-                console.error('PayPal Error:', err);
-            }
-        }).render('#paypal-button-container');
+        // Initially hide the PayPal container
+        document.getElementById("paypal-button-container").classList.add("hidden-paypal");
     </script>
 </body>
 </html>
