@@ -22,7 +22,27 @@
     </div>
 
     <script>
-        // PayPal code remains unchanged.
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '19.99' // Replace with the amount for your product or service
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
+                    // Additional actions to take after successful payment, like redirecting to a success page.
+                });
+            },
+            onError: function(err) {
+                alert('Payment failed. Please try again later.');
+                console.error('PayPal Error:', err);
+            }
+        }).render('#paypal-button-container');
     </script>
 </body>
 </html>
