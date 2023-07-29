@@ -8,47 +8,55 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
     font-size: 24px;
     text-align: center;
+}
+
+.big-font {
+    font-size: 36px;
+}
+
+.small-font {
+    font-size: 18px;
+}
+
+.bold-font {
+    font-weight: bold;
 }
 
 .white-text {
     color: #fff;
 }
 
-.blue-text {
-    color: blue;
+.yellow-text {
+    color: yellow;
 }
 
-.small-font {
-    font-size: 14px;
+.cyber-font {
+    color: #FFD300; /* Cyber Yellow */
 }
 
-.blue-band {
+.black-text {
+    color: black;
+}
+
+.blue-background {
     background-color: blue;
-    width: 100px; /* 5 cm */
 }
 
-.white-band {
-    background-color: #fff;
-    width: 40px; /* 2 cm */
+.cyan-background {
+    background-color: cyan;
 }
 
-.wide-band {
+.white-background {
     background-color: white;
-    width: 300px; /* 15 cm */
+    width: 10rem; /* 10 cm */
 }
 
-.yellow-band {
-    background-color: yellow;
-    width: 100px; /* 5 cm */
+.blue-background {
+    background-color: blue;
 }
 
-.yellow-band p {
+.blue-background p, .cyan-background p, .white-background p {
     color: white;
-}
-
-.blue-band p, .white-band p, .wide-band p {
-    color: blue;
 }
