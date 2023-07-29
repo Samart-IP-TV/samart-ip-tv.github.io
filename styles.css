@@ -69,6 +69,10 @@ body {
 
 .yellow-background {
     background-color: yellow;
+    position: absolute; /* Added to move Div 3 to the bottom */
+    bottom: 0; /* Bottom position */
+    left: 0; /* Left position */
+    width: 100%; /* Full width */
 }
 
 .blue-background p, .darkblue-background p, .cyan-background p, .white-background p, .yellow-background p {
