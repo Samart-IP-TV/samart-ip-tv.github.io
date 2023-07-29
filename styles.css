@@ -15,25 +15,25 @@ body {
 
 .line1 {
     background-color: cyan;
-    width: 200px; /* 5 cm */
+    width: 5rem;
 }
 
 .line2 {
     background-color: cyan;
     color: yellow;
-    width: 80px; /* 2 cm */
+    width: 2rem;
 }
 
 .line3 {
     background-color: white;
     color: navy;
-    width: 600px; /* 15 cm */
+    width: 15rem;
 }
 
 .line4 {
     background-color: #FFD300; /* Cyber Yellow */
     color: white;
-    width: 200px; /* 5 cm */
+    width: 5rem;
 }
 
 .yellow-text {
