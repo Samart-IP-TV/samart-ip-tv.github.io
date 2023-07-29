@@ -3,7 +3,7 @@ body {
     padding: 0;
 }
 
-.line {
+.band {
     height: 100px;
     display: flex;
     justify-content: center;
@@ -26,19 +26,18 @@ body {
     font-size: 14px;
 }
 
-.blue-line {
+.blue-band {
     background-color: blue;
 }
 
-.white-line {
+.white-band {
     background-color: #fff;
-    border-top: 5px solid #000; /* To add a thin border at the top of the white line */
 }
 
-.wide-line {
+.wide-band {
     width: 100%;
 }
 
-.yellow-line {
+.yellow-band {
     background-color: yellow;
 }
