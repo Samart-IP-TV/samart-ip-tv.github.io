@@ -29,11 +29,11 @@ body {
 }
 
 .yellow-text {
-    color: balck;
+    color: yellow;
 }
 
 .cyber-font {
-    color: #000000; /* Cyber Yellow */
+    color: #000000; /* Black */
 }
 
 .black-text {
@@ -44,19 +44,23 @@ body {
     background-color: blue;
 }
 
+.darkblue-background {
+    background-color: darkblue;
+}
+
 .cyan-background {
     background-color: cyan;
 }
 
 .white-background {
     background-color: white;
-    width: 30rem; /* 30 cm */
+    width: 150px; /* 5 times the width of div 1 (30 cm / 5) */
 }
 
-.blue-background {
-    background-color: blue;
+.yellow-background {
+    background-color: yellow;
 }
 
-.blue-background p, .cyan-background p, .white-background p {
+.blue-background p, .darkblue-background p, .cyan-background p, .white-background p {
     color: white;
 }
