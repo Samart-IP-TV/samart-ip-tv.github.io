@@ -6,8 +6,7 @@ body {
 .band {
     height: 100px;
     display: flex;
-    flex-direction: row; /* Added to align text horizontally */
-    justify-content: space-between; /* Added to evenly space the texts */
+    justify-content: center;
     align-items: center;
     font-size: 24px;
     text-align: center;
@@ -90,4 +89,25 @@ body {
     position: absolute;
     bottom: 10px; /* Bottom distance from the container */
     right: 10px; /* Right distance from the container */
+}
+
+/* Additional styles for the right-aligned text */
+.right-align {
+    justify-content: flex-end;
+}
+
+.clear-font {
+    font-family: Arial, sans-serif; /* Change to any preferred font family */
+}
+
+/* Adjust the font size and line height for clearer text */
+.clear-font.big-font {
+    font-size: 40px;
+    line-height: 1.5;
+}
+
+/* Adjust the width of the smaller-background (div 4) */
+.smaller-background {
+    width: calc(5% - 5rem); /* 5% of the width with 5rem for the PayPal button */
+    position: relative; /* Added to position PayPal button */
 }
