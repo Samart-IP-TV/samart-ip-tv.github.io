@@ -54,7 +54,12 @@ body {
 
 .white-background {
     background-color: white;
-    width: 150px; /* 5 times the width of div 1 (30 cm / 5) */
+    width: 5rem; /* 5 cm */
+}
+
+.larger-background {
+    width: 25rem; /* 25 cm */
+    position: relative; /* Added to position PayPal button */
 }
 
 .yellow-background {
@@ -63,4 +68,11 @@ body {
 
 .blue-background p, .darkblue-background p, .cyan-background p, .white-background p, .yellow-background p {
     color: white;
+}
+
+/* Added styles for the PayPal button container */
+#paypal-button-container {
+    position: absolute;
+    bottom: 10px; /* Bottom distance from the container */
+    right: 10px; /* Right distance from the container */
 }
