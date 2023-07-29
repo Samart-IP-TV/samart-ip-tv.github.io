@@ -61,6 +61,6 @@ body {
     background-color: yellow;
 }
 
-.blue-background p, .darkblue-background p, .cyan-background p, .white-background p {
+.blue-background p, .darkblue-background p, .cyan-background p, .white-background p, .yellow-background p {
     color: white;
 }
