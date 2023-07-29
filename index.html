@@ -5,19 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Four Bands</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
 </head>
 <body>
     <div class="band blue-background">
         <p class="white-text big-font">Text 1</p>
     </div>
-    <a href="payment.html" class="band cyan-background">
+    <div id="paypal-button-container" class="band cyan-background">
         <p class="yellow-text cyber-font">Text 2</p>
-    </a>
+    </div>
     <div class="band white-background">
         <p class="black-text bold-font">Text 3</p>
     </div>
     <div class="band blue-background">
         <p class="white-text small-font">Text 4</p>
     </div>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '19.99' // Replace with the amount for your product or service
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
+                    // Additional actions to take after successful payment, like redirecting to a success page.
+                });
+            },
+            onError: function(err) {
+                alert('Payment failed. Please try again later.');
+                console.error('PayPal Error:', err);
+            }
+        }).render('#paypal-button-container');
+    </script>
 </body>
 </html>
