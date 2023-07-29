@@ -6,7 +6,8 @@ body {
 .band {
     height: 100px;
     display: flex;
-    justify-content: center;
+    flex-direction: row; /* Added to align text horizontally */
+    justify-content: space-between; /* Added to evenly space the texts */
     align-items: center;
     font-size: 24px;
     text-align: center;
