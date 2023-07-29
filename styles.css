@@ -8,36 +8,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
     font-weight: bold;
     font-size: 24px;
     text-align: center;
 }
 
-.white-text {
-    color: #fff;
+.line1 {
+    background-color: cyan;
+    width: 5cm;
 }
 
-.blue-text {
-    color: blue;
+.line2 {
+    background-color: cyan;
+    color: yellow;
+    width: 2cm;
 }
 
-.small-font {
-    font-size: 14px;
+.line3 {
+    background-color: white;
+    color: navy;
+    width: 15cm;
 }
 
-.blue-band {
-    background-color: blue;
+.line4 {
+    background-color: #FFD300; /* Cyber Yellow */
+    color: white;
+    width: 5cm;
 }
 
-.white-band {
-    background-color: #fff;
+.yellow-text {
+    color: yellow;
 }
 
-.wide-band {
-    width: 100%;
-}
-
-.yellow-band {
-    background-color: yellow;
+.navyblue-text {
+    color: navy;
 }
