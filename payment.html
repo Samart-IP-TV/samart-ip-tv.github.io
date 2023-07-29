@@ -1,35 +1,90 @@
-html
+<!DOCTYPE html>
+<html lang="en">
 
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
-
-Replace 'YOUR_PAYPAL_CLIENT_ID' with the Client ID you obtained from the PayPal Developer Dashboard.
-
-    Use PayPal Buttons: With the PayPal SDK integrated, you can use PayPal buttons to handle payments. For example, you can use the following script to create a "Buy Now" button:
-
-html
-
-<div id="paypal-button-container"></div>
-
-<script>
-    paypal.Buttons({
-        createOrder: function(data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '19.99' // Replace with the amount for your product or service
-                    }
-                }]
-            });
-        },
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-                alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
-                // Additional actions to take after successful payment, like redirecting to a success page.
-            });
-        },
-        onError: function(err) {
-            alert('Payment failed. Please try again later.');
-            console.error('PayPal Error:', err);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
         }
-    }).render('#paypal-button-container');
-</script>
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h2 {
+            margin-top: 0;
+        }
+
+        .product-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #f44336;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Product Page</h1>
+    </header>
+    <div class="container">
+        <div class="product-info">
+            <h2>Product Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc vel turpis blandit, eu
+                condimentum nunc consectetur.</p>
+            <p>Price: $19.99</p>
+            <button class="buy-button" onclick="buyNow()">Buy Now</button>
+        </div>
+        <div class="product-image">
+            <img src="product_image.jpg" alt="Product Image" width="200">
+        </div>
+    </div>
+
+    <script>
+        function buyNow() {
+            // You can add the PayPal payment integration logic here.
+            // For simplicity, this example does not include an actual payment gateway integration.
+            alert("Thank you for your purchase!");
+        }
+    </script>
+</body>
+
+</html>
