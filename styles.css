@@ -80,6 +80,11 @@ body {
     color: white;
 }
 
+/* Styles for the hidden class */
+.hidden {
+    display: none;
+}
+
 /* Added styles for the PayPal button container */
 #paypal-button-container {
     position: absolute;
