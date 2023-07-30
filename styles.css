@@ -1,113 +1,34 @@
-body {
-    margin: 0;
-    padding: 0;
-}
+/* styles.css */
 
-.band {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    text-align: center;
-}
+/* ... (existing styles) ... */
 
-.big-font {
-    font-size: 36px;
-}
-
-.small-font {
-    font-size: 18px;
-}
-
-.bold-font {
-    font-weight: bold;
-}
-
-.white-text {
-    color: #fff;
-}
-
-.yellow-text {
-    color: yellow;
-}
-
-.cyber-font {
-    color: #000000; /* Black */
-}
-
-.black-text {
-    color: black;
-}
-
-.blue-background {
-    background-color: blue;
-}
-
-.darkblue-background {
-    background-color: darkblue;
-}
-
-.cyan-background {
-    background-color: cyan;
-}
-
-.white-background {
-    background-color: white;
-    width: calc(100% - 5rem); /* Rest of the space after Div 3 */
-}
-
-.larger-background {
-    width: calc(75% - 5rem); /* 75% of the width with 5rem left for the PayPal button */
-    position: relative; /* Added to position PayPal button */
-}
-
-.smaller-background {
-    width: calc(25% - 5rem); /* 25% of the width with 5rem for the PayPal button */
-    position: relative; /* Added to position PayPal button */
-}
-
-.yellow-background {
-    background-color: yellow;
-    position: absolute; /* Added to move Div 3 to the bottom */
-    bottom: 0; /* Bottom position */
-    left: 0; /* Left position */
-    width: 100%; /* Full width */
-}
-
-.blue-background p, .darkblue-background p, .cyan-background p, .white-background p, .yellow-background p {
+/* Customize fonts for Text 1, Text 11, Text 12, and Text 13 */
+#text1Content p,
+#text11Content p,
+#text12Content p,
+#text13Content p {
     color: white;
+    font-family: "Remarkable", Arial, sans-serif; /* Add your preferred font family for Text 1, 11, 12, and 13 */
 }
 
-/* Styles for the hidden class */
-.hidden {
-    display: none;
+/* Only link Text 13 to PayPal */
+#text13Content a {
+    color: #0070ba; /* Change the color to your preferred link color */
+    text-decoration: underline;
 }
 
-/* Added styles for the PayPal button container */
+/* Move the PayPal container to the left and adjust the width of the smaller-background (div 4) */
 #paypal-button-container {
     position: absolute;
     bottom: 10px; /* Bottom distance from the container */
-    right: 10px; /* Right distance from the container */
+    left: 10px; /* Left distance from the container */
 }
 
-/* Additional styles for the right-aligned text */
-.right-align {
-    justify-content: flex-end;
-}
-
-.clear-font {
-    font-family: Arial, sans-serif; /* Change to any preferred font family */
-}
-
-/* Adjust the font size and line height for clearer text */
-.clear-font.big-font {
-    font-size: 40px;
-    line-height: 1.5;
-}
-
-/* Adjust the width of the smaller-background (div 4) */
+/* Set background for div 4 (yellow background from left to right) */
 .smaller-background {
-    width: calc(5% - 5rem); /* 5% of the width with 5rem for the PayPal button */
+    width: calc(95% - 5rem); /* 95% of the width with 5rem for the PayPal button */
     position: relative; /* Added to position PayPal button */
+    background-color: yellow; /* Set background color for div 4 */
 }
+
+/* ... (existing styles) ... */
