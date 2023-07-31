@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Div 1: Band width 2.5 cm -->
-    <div class="band lightblue-background" onmouseover="showTooltip('Text 1')" onmouseout="hideTooltip('Text 1')">
+    <div class="band lightblue-background" onmouseover="showTooltip('tooltipText1')" onmouseout="hideTooltip('tooltipText1')">
         <p class="white-text clear-font big-font">
             <a href="#" onclick="toggleText('text1Content')">Text 1</a>
             <a href="#" onclick="toggleText('text11Content')">Text 11</a>
@@ -48,7 +48,9 @@
     </div>
     <div id="text13Content" class="hidden">
         <p class="white-text clear-font big-font remarkable-font">This is the additional content for Text 13.</p>
-        <div id="paypal-button-container" class="hidden-paypal"></div> <!-- PayPal button initially hidden -->
+        <div id="paypal-button-container" class="hidden-paypal">
+            <!-- PayPal buttons will be rendered here -->
+        </div>
     </div>
 
     <script>
@@ -86,13 +88,13 @@
             }
         }
 
-        function showTooltip(contentId) {
-            var tooltip = document.getElementById("tooltip" + contentId);
+        function showTooltip(tooltipId) {
+            var tooltip = document.getElementById(tooltipId);
             tooltip.classList.remove("hidden");
         }
 
-        function hideTooltip(contentId) {
-            var tooltip = document.getElementById("tooltip" + contentId);
+        function hideTooltip(tooltipId) {
+            var tooltip = document.getElementById(tooltipId);
             tooltip.classList.add("hidden");
         }
 
