@@ -63,7 +63,7 @@ body {
 }
 
 .smaller-background {
-    width: calc(25% - 5rem); /* 25% of the width with 5rem for the PayPal button */
+    width: calc(5% - 5rem); /* 5% of the width with 5rem for the PayPal button */
     position: relative; /* Added to position PayPal button */
 }
 
@@ -104,10 +104,4 @@ body {
 .clear-font.big-font {
     font-size: 40px;
     line-height: 1.5;
-}
-
-/* Adjust the width of the smaller-background (div 4) */
-.smaller-background {
-    width: calc(5% - 5rem); /* 5% of the width with 5rem for the PayPal button */
-    position: relative; /* Added to position PayPal button */
 }
