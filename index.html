@@ -16,16 +16,8 @@
             <a href="#" onclick="toggleText('text13Content')">Text 13</a>
         </p>
     </div>
-    <div class="band darkblue-background">
-        <p class="yellow-text cyber-font">Text 2</p>
-    </div>
-    <div class="band white-background larger-background">
-        <p class="black-text bold-font">
-            <a href="#" onclick="toggleText('text3Content')">Text 3</a>
-        </p>
-    </div>
 
-    <!-- Hidden text for Text 1, Text 11, Text 12, Text 13, and Text 3 -->
+    <!-- Hidden text for Text 1, Text 11, Text 12, Text 13 -->
     <div id="text1Content" class="hidden">
         <p class="white-text clear-font big-font">This is the additional content for Text 1.</p>
     </div>
@@ -37,16 +29,7 @@
     </div>
     <div id="text13Content" class="hidden">
         <p class="white-text clear-font big-font remarkable-font">This is the additional content for Text 13.</p>
-        <p class="white-text big-font">Click below to proceed with PayPal payment:</p>
         <div id="paypal-buttons"></div> <!-- PayPal buttons will be rendered here -->
-    </div>
-    <div id="text3Content" class="hidden">
-        <p class="white-text clear-font big-font">This is the additional content for Text 3.</p>
-    </div>
-
-    <!-- Div 4 with yellow background band at the bottom -->
-    <div class="band yellow-background smaller-background">
-        <p class="white-text small-font">New Bottom Div</p>
     </div>
 
     <script>
@@ -55,7 +38,7 @@
             content.classList.toggle("hidden");
 
             if (contentId === "text13Content") {
-                var paypalContainer = document.getElementById("paypal-button-container");
+                var paypalContainer = document.getElementById("paypal-buttons");
                 paypalContainer.classList.toggle("hidden-paypal");
                 // Render PayPal buttons when Text 13 is clicked
                 if (!paypalContainer.querySelector("#paypal-buttons iframe")) {
@@ -85,7 +68,7 @@
         }
 
         // Initially hide the PayPal container
-        document.getElementById("paypal-button-container").classList.add("hidden-paypal");
+        document.getElementById("paypal-buttons").classList.add("hidden-paypal");
     </script>
 </body>
 </html>
