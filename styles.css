@@ -54,7 +54,7 @@ body {
 #paypal-button-container {
     position: absolute;
     bottom: 10px;
-    left: 10px;
+    right: 10px;
 }
 
 .hidden-paypal {
@@ -64,7 +64,7 @@ body {
 /* Tooltip styles */
 .tooltip {
     position: absolute;
-    top: 0;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
