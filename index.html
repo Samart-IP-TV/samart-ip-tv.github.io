@@ -9,13 +9,16 @@
 </head>
 <body>
     <!-- Div 1: Band width 2.5 cm -->
-    <div class="band lightblue-background">
+    <div class="band lightblue-background" onmouseover="showTooltip('Text 1')" onmouseout="hideTooltip('Text 1')">
         <p class="white-text clear-font big-font">
-            <a href="#" onmouseover="showText('text1')">Text 1</a>
-            <a href="#" onmouseover="showText('text11')">Text 11</a>
-            <a href="#" onmouseover="showText('text12')">Text 12</a>
+            <a href="#" onclick="toggleText('text1Content')">Text 1</a>
+            <a href="#" onclick="toggleText('text11Content')">Text 11</a>
+            <a href="#" onclick="toggleText('text12Content')">Text 12</a>
             <a href="#" onclick="toggleText('text13Content')">Text 13</a>
         </p>
+        <div class="tooltip hidden" id="tooltipText1">TTTTT1</div>
+        <div class="tooltip hidden" id="tooltipText11">TTTTT11</div>
+        <div class="tooltip hidden" id="tooltipText12">TTTTT12</div>
     </div>
 
     <!-- Div 2: Band width 1 cm -->
@@ -35,13 +38,13 @@
 
     <!-- Hidden text for Text 1, Text 11, Text 12, Text 13 -->
     <div id="text1Content" class="hidden">
-        <p class="white-text clear-font big-font">TTTTT1</p>
+        <p class="white-text clear-font big-font">This is the additional content for Text 1.</p>
     </div>
     <div id="text11Content" class="hidden">
-        <p class="white-text clear-font big-font">TTTTT11</p>
+        <p class="white-text clear-font big-font">This is the additional content for Text 11.</p>
     </div>
     <div id="text12Content" class="hidden">
-        <p class="white-text clear-font big-font">TTTTT12</p>
+        <p class="white-text clear-font big-font">This is the additional content for Text 12.</p>
     </div>
     <div id="text13Content" class="hidden">
         <p class="white-text clear-font big-font remarkable-font">This is the additional content for Text 13.</p>
@@ -83,12 +86,14 @@
             }
         }
 
-        function showText(contentId) {
-            var content = document.getElementById(contentId + "Content");
-            content.classList.remove("hidden");
-            setTimeout(function() {
-                content.classList.add("hidden");
-            }, 2000); // Hide the text after 2 seconds
+        function showTooltip(contentId) {
+            var tooltip = document.getElementById("tooltip" + contentId);
+            tooltip.classList.remove("hidden");
+        }
+
+        function hideTooltip(contentId) {
+            var tooltip = document.getElementById("tooltip" + contentId);
+            tooltip.classList.add("hidden");
         }
 
         // Initially hide the PayPal container
