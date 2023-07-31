@@ -1,25 +1,47 @@
-/* ... (Existing styles) ... */
-
-/* Styles for the new div (div 5) */
-.smaller-background {
-    width: 100%;
-    position: relative;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.yellow-background {
-    background-color: yellow;
+.band {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+}
+
+.big-font {
+    font-size: 36px;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.blue-background {
+    background-color: blue;
+}
+
+/* Styles for the hidden class */
+.hidden {
+    display: none;
+}
+
+/* Additional styles for the remarkable-font */
+.remarkable-font {
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+}
+
+/* Additional styles for the PayPal button container */
+#paypal-buttons {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px; /* Add padding for better visibility, you can adjust the value as needed */
+    bottom: 10px;
+    left: 10px;
 }
 
-.yellow-background p {
-    color: white;
-    font-size: 14px; /* You can adjust the font size as needed */
-    margin: 0; /* Remove any default margin for the paragraph element */
-    padding: 0; /* Remove any default padding for the paragraph element */
+.hidden-paypal {
+    display: none;
 }
-
-/* ... (Existing styles) ... */
