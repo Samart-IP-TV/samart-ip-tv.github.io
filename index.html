@@ -8,28 +8,44 @@
     <script src="https://www.paypal.com/sdk/js?client-id=ASvRgtfWkkQNLsxKRUdKm-dNuvx96jJFsdkT2y2opVse9t-6yrLw9r2V_XTWBY2-MuxGFalCLFsJGm6_"></script>
 </head>
 <body>
-    <div class="band blue-background">
-        <p class="white-text clear-font big-font right-align">
-            <a href="#" onclick="toggleText('text1Content')">Text 1</a>
-            <a href="#" onclick="toggleText('text12Content')">Text 12</a>
-            <a href="#" onclick="toggleText('text11Content')">Text 11</a>
+    <!-- Div 1: Band width 2.5 cm -->
+    <div class="band lightblue-background">
+        <p class="white-text clear-font big-font">
+            <a href="#" onmouseover="showText('text1')">Text 1</a>
+            <a href="#" onmouseover="showText('text11')">Text 11</a>
+            <a href="#" onmouseover="showText('text12')">Text 12</a>
             <a href="#" onclick="toggleText('text13Content')">Text 13</a>
         </p>
     </div>
 
+    <!-- Div 2: Band width 1 cm -->
+    <div class="band darkblue-background">
+        <p class="black-text clear-font big-font">Text 2</p>
+    </div>
+
+    <!-- Div 3: Band width 100% (full width) -->
+    <div class="band white-background">
+        <p class="black-text clear-font big-font">Text 3</p>
+    </div>
+
+    <!-- Div 4: Band width 1 cm -->
+    <div class="band lightblue-background">
+        <p class="white-text clear-font big-font">Text 4</p>
+    </div>
+
     <!-- Hidden text for Text 1, Text 11, Text 12, Text 13 -->
     <div id="text1Content" class="hidden">
-        <p class="white-text clear-font big-font">This is the additional content for Text 1.</p>
+        <p class="white-text clear-font big-font">TTTTT1</p>
     </div>
     <div id="text11Content" class="hidden">
-        <p class="white-text clear-font big-font">This is the additional content for Text 11.</p>
+        <p class="white-text clear-font big-font">TTTTT11</p>
     </div>
     <div id="text12Content" class="hidden">
-        <p class="white-text clear-font big-font">This is the additional content for Text 12.</p>
+        <p class="white-text clear-font big-font">TTTTT12</p>
     </div>
     <div id="text13Content" class="hidden">
         <p class="white-text clear-font big-font remarkable-font">This is the additional content for Text 13.</p>
-        <div id="paypal-buttons"></div> <!-- PayPal buttons will be rendered here -->
+        <div id="paypal-button-container" class="hidden-paypal"></div> <!-- PayPal button initially hidden -->
     </div>
 
     <script>
@@ -38,7 +54,7 @@
             content.classList.toggle("hidden");
 
             if (contentId === "text13Content") {
-                var paypalContainer = document.getElementById("paypal-buttons");
+                var paypalContainer = document.getElementById("paypal-button-container");
                 paypalContainer.classList.toggle("hidden-paypal");
                 // Render PayPal buttons when Text 13 is clicked
                 if (!paypalContainer.querySelector("#paypal-buttons iframe")) {
@@ -62,13 +78,21 @@
                             alert('Payment failed. Please try again later.');
                             console.error('PayPal Error:', err);
                         }
-                    }).render('#paypal-buttons');
+                    }).render('#paypal-button-container');
                 }
             }
         }
 
+        function showText(contentId) {
+            var content = document.getElementById(contentId + "Content");
+            content.classList.remove("hidden");
+            setTimeout(function() {
+                content.classList.add("hidden");
+            }, 2000); // Hide the text after 2 seconds
+        }
+
         // Initially hide the PayPal container
-        document.getElementById("paypal-buttons").classList.add("hidden-paypal");
+        document.getElementById("paypal-button-container").classList.add("hidden-paypal");
     </script>
 </body>
 </html>
