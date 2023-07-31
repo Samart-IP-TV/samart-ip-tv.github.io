@@ -9,12 +9,12 @@
 </head>
 <body>
     <!-- Div 1: Band width 2.5 cm -->
-    <div class="band blue-background">
+    <div class="band blue-background" onmouseover="displayText('This is text 1...........')" onmouseout="hideTooltip('tooltipText1')">
         <p class="white-text clear-font big-font">
-            <a href="#" onmouseover="displayText('This is text 1...........')" onmouseout="hideTooltip('tooltipText1')" onclick="toggleText('text1Content')">Text 1</a>
-            <a href="#" onmouseover="displayText('This is text 11...........')" onmouseout="hideTooltip('tooltipText1')" onclick="toggleText('text11Content')">Text 11</a>
-            <a href="#" onmouseover="displayText('This is text 12...........')" onmouseout="hideTooltip('tooltipText1')" onclick="toggleText('text12Content')">Text 12</a>
-            <a href="#" onmouseover="displayText('This is text 13...........')" onmouseout="hideTooltip('tooltipText1')" onclick="toggleText('text13Content')">Text 13</a>
+            <a href="#" onclick="toggleText('text1Content')">Text 1</a>
+            <a href="#" onclick="toggleText('text11Content')">Text 11</a>
+            <a href="#" onclick="toggleText('text12Content')">Text 12</a>
+            <a href="#" onclick="toggleText('text13Content')">Text 13</a>
         </p>
         <div class="tooltip hidden" id="tooltipText1"></div>
     </div>
