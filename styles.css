@@ -25,17 +25,17 @@ body {
 }
 
 .lightblue-background {
-    background-color: lightblue;
+    background-color: blue; /* Updated color for Text 1, Text 11, Text 12, and Text 13 */
     width: 2.5cm;
 }
 
 .darkblue-background {
-    background-color: darkblue;
+    background-color: blue; /* Updated color for Div 2 */
     width: 1cm;
 }
 
 .white-background {
-    background-color: white;
+    background-color: blue; /* Updated color for Div 3 */
     width: 100%;
 }
 
