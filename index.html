@@ -11,14 +11,14 @@
     <!-- Div 1: Band 1 -->
     <div class="band blue-light-background">
         <p class="white-text clear-font big-font">
-            <a href="#" onclick="toggleText('text1Content')">Text 1</a>
-            <a href="#" onclick="toggleText('text11Content')">Text 11</a>
-            <a href="#" onclick="toggleText('text12Content')">Text 12</a>
+            <a href="#" onmouseover="displayText('TTTTTTT1')" onmouseout="hideTooltip('tooltipText1')">Text 1</a>
+            <a href="#" onmouseover="displayText('TTTTTTT2')" onmouseout="hideTooltip('tooltipText1')">Text 11</a>
+            <a href="#" onmouseover="displayText('TTTTTTT12')" onmouseout="hideTooltip('tooltipText1')">Text 12</a>
             <a href="#" onclick="toggleText('text13Content')">Text 13</a>
         </p>
     </div>
 
-    <!-- Div 2: Band width 1 cm -->
+    <!-- Div 2: Band 2 -->
     <div class="band darkblue-background">
         <p class="black-text clear-font big-font">Text 2</p>
     </div>
@@ -43,6 +43,11 @@
         <div id="paypal-button-container" class="hidden-paypal">
             <!-- PayPal buttons will be rendered here -->
         </div>
+    </div>
+
+    <!-- Div 4: Band 4 -->
+    <div class="band yellow-dark-background">
+        <p class="black-text clear-font big-font">Text 4</p>
     </div>
 
     <script>
