@@ -1,69 +1,108 @@
-/* Common styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART IP-TV</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=ASvRgtfWkkQNLsxKRUdKm-dNuvx96jJFsdkT2y2opVse9t-6yrLw9r2V_XTWBY2-MuxGFalCLFsJGm6_"></script>
+</head>
+<body>
+    <!-- Div 1: Line 1 -->
+    <div class="line blue-light-background">
+        <p class="white-text clear-font big-font">
+            <a href="#" onmouseover="displayText('TTTTTTT1')" onmouseout="hideTooltip('tooltipText1')">Text 1</a>
+            <a href="#" onmouseover="displayText('TTTTTTT2')" onmouseout="hideTooltip('tooltipText1')">Text 11</a>
+            <a href="#" onmouseover="displayText('TTTTTTT12')" onmouseout="hideTooltip('tooltipText1')">Text 12</a>
+            <a href="#" onclick="toggleText('text13Content')">Text 13</a>
+        </p>
+    </div>
 
-/* Line 1 */
-.line.blue-light-background {
-    height: 2cm;
-    background-color: #ADD8E6;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
+    <!-- Div 2: Line 2 -->
+    <div class="line darkblue-background">
+        <p class="white-text clear-font big-font">Text 2</p>
+    </div>
 
-/* New CSS rule for making the text font white */
-.white-text {
-    color: white;
-}
+    <!-- Div 3: Line 3 -->
+    <div class="line white-background">
+        <!-- Empty div for spacing -->
+    </div>
 
-/* Line 2 */
-.line.darkblue-background {
-    height: 1.5cm;
-    background-color: #00008B;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
+    <!-- Div 4: Line 4 -->
+    <div class="line yellow-dark-background">
+        <p class="black-text clear-font big-font">Text 4</p>
+    </div>
 
-/* Line 3 */
-.line.white-background {
-    height: 1.5cm;
-    background-color: white;
-}
+    <!-- Hidden text for Text 1, Text 11, Text 12, Text 13 -->
+    <div id="text1Content" class="hidden">
+        <p class="white-text clear-font big-font">This is the additional content for Text 1.</p>
+    </div>
+    <div id="text11Content" class="hidden">
+        <p class="white-text clear-font big-font">This is the additional content for Text 11.</p>
+    </div>
+    <div id="text12Content" class="hidden">
+        <p class="white-text clear-font big-font">This is the additional content for Text 12.</p>
+    </div>
+    <div id="text13Content" class="hidden">
+        <p class="white-text clear-font big-font remarkable-font">This is the additional content for Text 13.</p>
+        <div id="paypal-button-container" class="hidden-paypal">
+            <!-- PayPal buttons will be rendered here -->
+        </div>
+    </div>
 
-/* Line 4 */
-.line.yellow-dark-background {
-    height: 1.1cm;
-    background-color: #8B0000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
+    <script>
+        function toggleText(contentId) {
+            var content = document.getElementById(contentId);
+            content.classList.toggle("hidden");
 
-/* Text 11 and Text 12 styles */
-.line.yellow-dark-background p {
-    color: black;
-}
+            if (contentId === "text13Content") {
+                var paypalContainer = document.getElementById("paypal-button-container");
+                paypalContainer.classList.toggle("hidden-paypal");
+                // Render PayPal buttons when Text 13 is clicked
+                if (!paypalContainer.querySelector("#paypal-buttons iframe")) {
+                    paypal.Buttons({
+                        createOrder: function(data, actions) {
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: '19.99' // Replace with the amount for your product or service
+                                    }
+                                }]
+                            });
+                        },
+                        onApprove: function(data, actions) {
+                            return actions.order.capture().then(function(details) {
+                                alert('Payment successful! Transaction completed by ' + details.payer.name.given_name);
+                                // Additional actions to take after successful payment, like redirecting to a success page.
+                            });
+                        },
+                        onError: function(err) {
+                            alert('Payment failed. Please try again later.');
+                            console.error('PayPal Error:', err);
+                        }
+                    }).render('#paypal-button-container');
+                }
+            }
+        }
 
-/* Hidden text style */
-.hidden {
-    display: none;
-}
+        function showTooltip(tooltipId) {
+            var tooltip = document.getElementById(tooltipId);
+            tooltip.classList.remove("hidden");
+        }
 
-/* Hidden PayPal container style */
-.hidden-paypal {
-    display: none;
-}
+        function hideTooltip(tooltipId) {
+            var tooltip = document.getElementById(tooltipId);
+            tooltip.classList.add("hidden");
+        }
 
-/* Tooltip style */
-.tooltip {
-    display: none;
-    position: absolute;
-    background-color: yellow;
-    padding: 5px;
-}
+        function displayText(text) {
+            var tooltipText = document.getElementById("tooltipText1");
+            tooltipText.textContent = text;
+            tooltipText.classList.remove("hidden");
+        }
+
+        // Initially hide the PayPal container
+        document.getElementById("paypal-button-container").classList.add("hidden-paypal");
+    </script>
+</body>
+</html>
