@@ -4,16 +4,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Div 1: Band width 2.5 cm */
-.band.blue-background {
-    width: 2.5cm;
-    background-color: blue;
+/* Div 1: Band 1 */
+.band.blue-light-background {
+    background-color: #ADD8E6;
     padding: 10px;
-}
-
-/* New CSS rule for moving text to the right */
-.white-text.clear-font.big-font {
-    float: right;
 }
 
 /* New CSS rule for making the text font white */
@@ -29,47 +23,4 @@ body {
 
 /* Div 2: Band width 1 cm */
 .band.darkblue-background {
-    width: 1cm;
-    background-color: darkblue;
-    padding: 10px;
-}
-
-/* Div 3: Band width 100% (full width) */
-.band.white-background {
-    width: 100%;
-    background-color: white;
-    padding: 10px;
-}
-
-/* Div 4: Band width 1 cm */
-.band.yellow-background {
-    width: 1cm;
-    background-color: yellow;
-    padding: 10px;
-}
-
-/* Text 11 and Text 12 styles */
-.band.yellow-background p {
-    color: black;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    white-space: nowrap;
-}
-
-/* Hidden text style */
-.hidden {
-    display: none;
-}
-
-/* Hidden PayPal container style */
-.hidden-paypal {
-    display: none;
-}
-
-/* Tooltip style */
-.tooltip {
-    display: none;
-    position: absolute;
-    background-color: yellow;
-    padding: 5px;
-}
+    width: 
