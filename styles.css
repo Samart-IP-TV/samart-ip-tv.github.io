@@ -11,9 +11,9 @@ body {
     padding: 10px;
 }
 
-/* New CSS rule for moving text to the left */
+/* New CSS rule for moving text to the right */
 .white-text.clear-font.big-font {
-    float: left;
+    float: right;
 }
 
 /* New CSS rule for making the text font white */
@@ -64,4 +64,12 @@ body {
 /* Hidden PayPal container style */
 .hidden-paypal {
     display: none;
+}
+
+/* Tooltip style */
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: yellow;
+    padding: 5px;
 }
