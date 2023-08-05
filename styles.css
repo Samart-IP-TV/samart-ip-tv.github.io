@@ -4,12 +4,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Div 1: Band 1 */
-.band.blue-light-background {
-    width: 2cm;
+/* Line 1 */
+.line.blue-light-background {
+    width: 100%;
+    height: 2cm;
     background-color: #ADD8E6;
-    padding: 10px;
-    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* New CSS rule for making the text font white */
@@ -17,32 +19,35 @@ body {
     color: white;
 }
 
-/* Div 2: Band 2 */
-.band.darkblue-background {
-    width: 1.1cm;
-    background-color: #00008B;
-    padding: 10px;
-    float: left;
-}
-
-/* Div 3: Band 3 */
-.band.white-background {
+/* Line 2 */
+.line.darkblue-background {
     width: 100%;
-    height: 1.5cm; /* Adjust the height of band 3 */
-    background-color: white;
-    float: left;
+    height: 1.5cm;
+    background-color: #00008B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Div 4: Band 4 */
-.band.yellow-dark-background {
-    width: 1.1cm;
+/* Line 3 */
+.line.white-background {
+    width: 100%;
+    height: 1.5cm;
+    background-color: white;
+}
+
+/* Line 4 */
+.line.yellow-dark-background {
+    width: 100%;
+    height: 1.1cm;
     background-color: #8B0000;
-    padding: 10px;
-    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Text 11 and Text 12 styles */
-.band.yellow-dark-background p {
+.line.yellow-dark-background p {
     color: black;
 }
 
