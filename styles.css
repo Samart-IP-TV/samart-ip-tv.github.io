@@ -13,16 +13,28 @@ body {
 }
 
 /* Band 1 */
-.darkblue-background {
+#band1 {
     background-color: #00008B;
     width: 1.1cm;
     justify-content: space-between;
 }
 
 /* Band 2 */
-.lightblue-background {
+#band2 {
     background-color: #ADD8E6;
     width: 0.5cm;
+    justify-content: center;
+}
+
+/* Band 3 */
+#band3 {
+    width: 0.35cm;
+}
+
+/* Band 4 */
+#band4 {
+    background-color: #8B0000;
+    width: 1.1cm;
     justify-content: center;
 }
 
@@ -32,7 +44,7 @@ body {
 }
 
 /* Text 11 and Text 12 styles */
-.darkblue-background p {
+#band1 p {
     color: white;
 }
 
