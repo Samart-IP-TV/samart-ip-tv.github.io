@@ -4,11 +4,31 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Div 1: Band 1 */
-.band.blue-light-background {
-    width: 2cm;
-    background-color: #ADD8E6;
+/* Line 1 */
+.line {
+    height: 2cm;
+    display: flex;
+    align-items: center;
     padding: 10px;
+}
+
+/* Band 1 */
+.darkblue-background {
+    background-color: #00008B;
+    width: 1.1cm;
+    justify-content: space-between;
+}
+
+/* Band 2 */
+.lightblue-background {
+    background-color: #ADD8E6;
+    width: 0.5cm;
+    justify-content: center;
+}
+
+/* Band 3 */
+.line {
+    width: 0.35cm;
 }
 
 /* New CSS rule for making the text font white */
@@ -16,36 +36,9 @@ body {
     color: white;
 }
 
-/* New CSS rule for the blue frame */
-.blue-frame {
-    background-color: blue;
-    padding: 5px;
-}
-
-/* Div 2: Band 2 */
-.band.darkblue-background {
-    width: 1.5cm;
-    background-color: #00008B;
-    padding: 10px;
-}
-
-/* Div 3: Band width 100% (full width) */
-.band.white-background {
-    width: 100%;
-    background-color: white;
-    padding: 10px;
-}
-
-/* Div 4: Band 4 */
-.band.yellow-dark-background {
-    width: 1.1cm;
-    background-color: #8B0000;
-    padding: 10px;
-}
-
 /* Text 11 and Text 12 styles */
-.band.yellow-dark-background p {
-    color: black;
+.darkblue-background p {
+    color: white;
 }
 
 /* Hidden text style */
