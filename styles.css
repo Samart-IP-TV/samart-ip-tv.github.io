@@ -25,11 +25,12 @@ body {
     float: left;
 }
 
-/* Div 3: Band width 100% (full width) */
+/* Div 3: Band 3 */
 .band.white-background {
     width: 100%;
+    height: 1.5cm; /* Adjust the height of band 3 */
     background-color: white;
-    padding: 10px;
+    float: left;
 }
 
 /* Div 4: Band 4 */
@@ -37,7 +38,7 @@ body {
     width: 1.1cm;
     background-color: #8B0000;
     padding: 10px;
-    float: right;
+    float: left;
 }
 
 /* Text 11 and Text 12 styles */
