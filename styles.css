@@ -6,7 +6,6 @@ body {
 
 /* Line 1 */
 .line {
-    height: 2cm;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -29,6 +28,13 @@ body {
 /* Band 3 */
 .line {
     width: 0.35cm;
+}
+
+/* Band 4 */
+.yellow-dark-background {
+    background-color: #8B0000;
+    width: 1.1cm;
+    justify-content: center;
 }
 
 /* New CSS rule for making the text font white */
