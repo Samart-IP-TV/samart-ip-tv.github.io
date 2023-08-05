@@ -26,18 +26,6 @@ body {
     justify-content: center;
 }
 
-/* Band 3 */
-.frame {
-    width: 0.35cm;
-}
-
-/* Band 4 */
-.yellow-dark-background {
-    background-color: #8B0000;
-    width: 1.1cm;
-    justify-content: center;
-}
-
 /* New CSS rule for making the text font white */
 .white-text {
     color: white;
