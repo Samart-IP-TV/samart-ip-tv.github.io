@@ -10,12 +10,14 @@
 <body>
     <!-- Div 1: Band width 2.5 cm -->
     <div class="band blue-background" onmouseover="displayText('This is text 1...........')" onmouseout="hideTooltip('tooltipText1')">
-        <p class="white-text clear-font big-font">
-            <a href="#" onclick="toggleText('text1Content')">Text 1</a>
-            <a href="#" onclick="toggleText('text11Content')">Text 11</a>
-            <a href="#" onclick="toggleText('text12Content')">Text 12</a>
-            <a href="#" onclick="toggleText('text13Content')">Text 13</a>
-        </p>
+        <div class="blue-frame"> <!-- New div with blue background -->
+            <p class="white-text clear-font big-font">
+                <a href="#" onclick="toggleText('text1Content')">Text 1</a>
+                <a href="#" onclick="toggleText('text11Content')">Text 11</a>
+                <a href="#" onclick="toggleText('text12Content')">Text 12</a>
+                <a href="#" onclick="toggleText('text13Content')">Text 13</a>
+            </p>
+        </div>
         <div class="tooltip hidden" id="tooltipText1"></div>
     </div>
 
@@ -44,6 +46,11 @@
         <div id="paypal-button-container" class="hidden-paypal">
             <!-- PayPal buttons will be rendered here -->
         </div>
+    </div>
+
+    <!-- Div 4: Band width 1 cm -->
+    <div class="band yellow-background">
+        <p class="black-text clear-font big-font">Text 3</p>
     </div>
 
     <script>
@@ -95,6 +102,11 @@
             var tooltipText = document.getElementById("tooltipText1");
             tooltipText.textContent = text;
             tooltipText.classList.remove("hidden");
+            tooltipText.style.display = "block";
+            tooltipText.style.width = "100px"; // Adjust the width as needed
+            tooltipText.style.textAlign = "center"; // Center the text
+            tooltipText.style.transform = "rotate(270deg)"; // Rotate the text vertically
+            tooltipText.style.whiteSpace = "nowrap"; // Prevent wrapping
         }
 
         // Initially hide the PayPal container
