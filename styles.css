@@ -24,9 +24,10 @@ body {
 
 /* Div 2: Band 2 */
 .band.darkblue-background {
-    width: 1.5cm;
+    width: 1.1cm;
     background-color: #00008B;
     padding: 10px;
+    float: left;
 }
 
 /* Div 3: Band width 100% (full width) */
@@ -41,6 +42,7 @@ body {
     width: 1.1cm;
     background-color: #8B0000;
     padding: 10px;
+    clear: both;
 }
 
 /* Text 11 and Text 12 styles */
